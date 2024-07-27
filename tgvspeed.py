@@ -9,7 +9,7 @@ import rumps
 class AwesomeStatusBarApp(rumps.App):
     def __init__(self):
         super(AwesomeStatusBarApp, self).__init__("TGVSpeed")
-        self.menu = ["🌎 Carte", "Aide", None]
+        self.menu = ["🚆 Voyage", "🌎 Carte", "🙋 Aide", None]
 
         self.gps = None
 
@@ -29,7 +29,7 @@ class AwesomeStatusBarApp(rumps.App):
         except requests.exceptions.ReadTimeout:
             pass
 
-        self.title = "🚄 ?"
+        self.title = "🚄 nodata"
         self.gps = None
 
     @rumps.clicked("🌎 Carte")
@@ -44,7 +44,15 @@ class AwesomeStatusBarApp(rumps.App):
 
         subprocess.run(["open", url])
 
-    @rumps.clicked("Aide")
+    @rumps.clicked("🚆 Voyage")
+    def journey(self, _):
+        if self.gps is None:
+            return
+        url = "https://wifi.sncf/fr/journey"
+
+        subprocess.run(["open", url])
+
+    @rumps.clicked("🙋 Aide")
     def help(self, _):
 
         url = "https://github.com/rene-d/tgvspeed"
