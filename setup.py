@@ -7,13 +7,13 @@ Usage:
 
 from setuptools import setup
 
-APP = ['tgvspeed.py']
-DATA_FILES = []
+APP = ["tgvspeed.py"]
+DATA_FILES = ["480px-Robot_icon_broken.svg.png", "gps.png"]
 OPTIONS = {}
 
 setup(
     app=APP,
     data_files=DATA_FILES,
-    options={'py2app': OPTIONS},
-    setup_requires=['py2app', 'rumps', 'requests'],
+    options={"py2app": OPTIONS},
+    setup_requires=["py2app", "rumps", "requests"],
 )
