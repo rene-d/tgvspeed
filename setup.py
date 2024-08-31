@@ -8,7 +8,7 @@ Usage:
 from setuptools import setup
 
 APP = ["tgvspeed.py"]
-DATA_FILES = ["480px-Robot_icon_broken.svg.png", "gps.png"]
+DATA_FILES = ["480px-Robot_icon_broken.svg.png", "gps.png", "train.png", "map.png", "destination.png"]
 OPTIONS = {}
 
 setup(
